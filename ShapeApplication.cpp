@@ -28,6 +28,11 @@ int main()
     else {
         std::cout << "The 3 points entered did not form a triangle" << std::endl;
     }
+
+    do {
+        std::cin.ignore();
+        std::cout << "Press the Enter key to Exit ShapeApplication...";
+    } while (std::cin.get() != '\n');
 }
 
 //method to ensure the entry is valid data for X
