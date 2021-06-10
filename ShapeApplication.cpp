@@ -1,5 +1,7 @@
-// ShapeApplication.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// ShapeApplication.cpp
+// Author: Jeff Sponenberg
+// This application is used to satisfy the assignment:
+// "Create a console application to calculate the perimeter of a triangle given 3 user supplied coordinates"
 
 #include <iostream>
 #include "Triangle.h"
@@ -15,12 +17,14 @@ int main()
 
     std::cout << "This application finds the perimeter of a triangle with user supplied values" << std::endl;
 
+    //loop for getting valid input for all 3 points of a triangle
     for (int index = 0; index < 3; index++) {
         tempX = getXLoc(index);
         tempY = getYLoc(index);
         triangle->setPointValues(index, tempX, tempY);
     }
 
+    //ensure the points form a triangle in order to calculate a perimeter
     if (triangle->ValidateShape()) {
         triangle->CalcPerimeter();
         std::cout << "The 3 points entered formed a triangle with a perimeter of " << triangle->getPerimeter() << "." << std::endl;
@@ -29,6 +33,7 @@ int main()
         std::cout << "The 3 points entered did not form a triangle" << std::endl;
     }
 
+    //added this so the program can be give the user control over when to exit
     do {
         std::cin.ignore();
         std::cout << "Press the Enter key to Exit ShapeApplication...";

@@ -3,8 +3,10 @@
 
 Triangle::Triangle()
 {
+	perimeter = 0.0f;
 }
 
+//method to calculate perimeter of the triangle
 void Triangle::CalcPerimeter()
 {
 	float perimeter = 0.0f;
@@ -49,17 +51,20 @@ bool Triangle::ValidateShape()
 	}
 }
 
+//set the value of each point in the Point array
 void Triangle::setPointValues(int index, float x, float y)
 {
 	m_Points[index].m_x = x;
 	m_Points[index].m_y = y;
 }
 
+//set perimeter
 void Triangle::setPerimeter(float p)
 {
 	perimeter = p;
 }
 
+//returns perimeter value
 float Triangle::getPerimeter()
 {
 	return perimeter;
